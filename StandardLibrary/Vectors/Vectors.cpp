@@ -1,6 +1,6 @@
 #include "Vectors.hpp"
 
-void VECTOR_U::VectorBasic()
+void TestVectorClass::VectorBasic()
 {
     strings.push_back("one");
     strings.push_back("two");

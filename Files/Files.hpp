@@ -1,3 +1,6 @@
+#ifndef FILES_H_
+#define FILES_H_
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -29,3 +32,5 @@ private:
     string FileNameParsingText = "Text.txt";
     string BinaryFileName = "Binary.bin";
 };
+
+#endif
