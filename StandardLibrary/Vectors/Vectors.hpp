@@ -26,8 +26,10 @@ class TestVectorClass
 public:
     void VectorBasic();
     void VectorAndMemmory();
+    void TwoDimensionalVector();
 private:
     vector<string> strings;
+    vector<double> numbers;
 };
 
 #endif
