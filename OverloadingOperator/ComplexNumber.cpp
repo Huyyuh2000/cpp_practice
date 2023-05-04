@@ -27,13 +27,17 @@ const Complex & Complex::operator=(const Complex &other)
     return *this;
 }
 
-const Complex & Complex::operator+(const Complex &c)
-{
-    cout << "Plus overloading is running" << endl;
-    real = real + c.real;
-    imaginary = imaginary + c.real;
-    return *this;
-}
+/**
+ * This implement mean c1 = c1 + c
+ * When implement c3 = c1 + c2, it mean that c1 = c1 + c2 then shollow assign to c3
+ */
+// const Complex & Complex::operator+(const Complex &c)
+// {
+//     cout << "Plus overloading is running" << endl;
+//     real = real + c.real;
+//     imaginary = imaginary + c.real;
+//     return *this;
+// }
 
 const Complex & Complex::operator+(double r)
 {
@@ -42,7 +46,23 @@ const Complex & Complex::operator+(double r)
     return *this;
 }
 
-const bool Complex::operator==(const Complex &c)
+
+Complex operator+(const Complex &c1, const Complex &c2)
+{
+    return Complex((c1.getReal() + c2.getReal()), (c1.getImaginary()+c2.getImaginary()));
+}
+
+Complex operator+(double d, const Complex c)
+{
+    return Complex((c.getReal() + d), c.getImaginary());
+}
+
+// Complex operator+(const Complex c, double d)
+// {
+//     return Complex((c.getReal() + d), c.getImaginary());
+// }
+
+const bool Complex::operator==(const Complex &c) const
 {
     if ((real == c.real) && (imaginary == c.imaginary))
     {
@@ -52,6 +72,18 @@ const bool Complex::operator==(const Complex &c)
     else
     {
         cout << "False ";
+        return false;
+    }
+}
+
+const bool Complex::operator!=(const Complex &c) const
+{
+    if ((real != c.real) || (imaginary != c.imaginary))
+    {
+        return true;
+    }
+    else
+    {
         return false;
     }
 }
