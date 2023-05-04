@@ -27,19 +27,34 @@ const Complex & Complex::operator=(const Complex &other)
     return *this;
 }
 
-const Complex & Complex::operator+(const Complex &c)
+// const Complex & Complex::operator+(const Complex &c)
+// {
+//     cout << "Plus overloading is running" << endl;
+//     real = real + c.real;
+//     imaginary = imaginary + c.real;
+//     return *this;
+// }
+
+// const Complex & Complex::operator+(double r)
+// {
+//     cout << "Plus overloading is running" << endl;
+//     real = real + r;
+//     return *this;
+// }
+
+Complex  operator+(const Complex &c1, const Complex &c2)
 {
-    cout << "Plus overloading is running" << endl;
-    real = real + c.real;
-    imaginary = imaginary + c.real;
-    return *this;
+    return Complex((c1.getReal()+c2.getReal()), (c1.getImaginary()+c2.getImaginary()));
 }
 
-const Complex & Complex::operator+(double r)
+Complex  operator+(double d, const Complex &c)
 {
-    cout << "Plus overloading is running" << endl;
-    real = real + r;
-    return *this;
+    return Complex((c.getReal()+d), c.getImaginary());
+}
+
+Complex  operator+(const Complex &c, double d)
+{
+    return Complex((c.getReal()+d), c.getImaginary());
 }
 
 const bool Complex::operator==(const Complex &c)
@@ -53,6 +68,18 @@ const bool Complex::operator==(const Complex &c)
     {
         cout << "False ";
         return false;
+    }
+}
+
+const bool Complex::operator!=(const Complex &c)
+{
+    if ((real != c.real) || (imaginary != c.imaginary))
+    {
+        return true;
+    }
+    else
+    {
+    return false;
     }
 }
 }
