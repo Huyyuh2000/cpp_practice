@@ -1,3 +1,13 @@
+/**
+ * @file ComplexNumber.hpp
+ * @author your name (you@domain.com)
+ * @brief https://en.cppreference.com/w/cpp/language/operators
+ * @version 0.1
+ * @date 2023-05-06
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #ifndef COMPLEXNUMBER_H_
 #define COMPLEXNUMBER_H_
 
@@ -27,6 +37,7 @@ public:
     // const Complex & operator+(double r);
     const bool operator==(const Complex &c);
     const bool operator!=(const Complex &c);
+    Complex operator*() const;
 };
 
 Complex  operator+(const Complex &c1, const Complex &c2);

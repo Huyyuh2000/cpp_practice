@@ -57,6 +57,11 @@ Complex  operator+(const Complex &c, double d)
     return Complex((c.getReal()+d), c.getImaginary());
 }
 
+Complex Complex::operator*() const
+{
+    return Complex(real, -imaginary);
+}
+
 const bool Complex::operator==(const Complex &c)
 {
     if ((real == c.real) && (imaginary == c.imaginary))
