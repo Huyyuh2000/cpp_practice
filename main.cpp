@@ -1,14 +1,16 @@
 // #include "TestException/TestException.hpp"
 // #include "Files/Files.hpp"
-#include "OverloadingOperator/ComplexNumber.hpp"
+#include "TemplateClasses/TemplateClasses.hpp"
 
 using namespace std;
-using namespace my_complex;
 
 int main()
 { 
-    Complex c1(3,4);
-    cout << *c1 + Complex(-1,2) << endl;
+    TemplateTest<int> Test(3);
+    Test.Print();
 
+    Print<string>("Hello");
+    Print(23);
+    Print<>(15);
     return 0;   
 }
