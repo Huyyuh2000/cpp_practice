@@ -13,10 +13,11 @@
 #define DECLTYPE_TYPEID_NAMEMANGLING_H_
 
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 
-typedef uint8_t distance;
+typedef int Distance;
 
 struct Dog
 {
@@ -27,12 +28,13 @@ struct Dog
 class Animal
 {
 private:
-    uint8_t  speak;
+    string  speak;
     uint16_t speed;
 public:
+    Animal();
     void print();
 };
 
-void test_Decltype_TypeId_NameMangling(Animal &class, Dog &struct, distance &t);
+void test_Decltype_TypeId_NameMangling(Animal &c, Dog &s, Distance &t);
 
 #endif
