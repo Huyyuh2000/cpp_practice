@@ -18,6 +18,11 @@ using namespace std;
 
 namespace NestedTemplateClasses
 {
+/**
+ * @brief 
+ * 
+ * @tparam T 
+ */
 template<class T>
 class RingBuffer
 {
@@ -76,6 +81,12 @@ private:
     T *value;
 };
 
+/**
+ * @brief This is nested template class, the main purpose is make class RingBuffer iterable,
+ *        Class in class should be define outside class for reading purpose
+ * 
+ * @tparam T 
+ */
 template<class T>
 class RingBuffer<T>::Iterator
 {
@@ -96,7 +107,7 @@ public:
 
     bool operator!=(const Iterator &other) const
     {
-        if (_index == other._index)
+        if (_index != other._index)
         {
             return true;
         }
