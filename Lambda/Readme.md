@@ -86,6 +86,13 @@ int main()
              cout << "a: " << a << endl;
              cout << "b: " << b << endl;}();
 
+    // Capture a by value but using mutable
+    [a]() mutable {
+        a = 2;
+        cout << "a: " << a << endl;
+    }();
+
+    cout << "a: " << a << endl; // mutable only change a copy of a in local scope, outside of scope a remain 
 
     LambdaCapturingTest test;
     test.run();
