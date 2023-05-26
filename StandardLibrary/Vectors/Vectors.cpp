@@ -61,3 +61,31 @@ void TestVectorClass::TwoDimensionalVector()
         cout << endl;
     }
 }
+
+TestVectorBoolType::TestVectorBoolType()
+{
+    a.push_back(true);
+    a.push_back(false);
+    a.push_back(true);
+    a.push_back(false);
+    a.push_back(true);
+
+    /**
+     * This is wrong since vector<bool> will initialize bit filed rather than
+     * a byte to store value
+     * 
+     */
+    // pt = &a[2];
+}
+
+void TestVectorBoolType::print()
+{
+    cout << a[2] << endl; // operator [] will return object of this class
+
+    cout << endl;
+
+    for (vector<bool>::iterator rf = a.begin(); rf!= a.end(); rf++)
+    {
+        cout << *rf << endl;
+    }
+}

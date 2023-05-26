@@ -32,4 +32,19 @@ private:
     vector<double> numbers;
 };
 
+/**
+ * @brief AUTOSAR_RS_CPP14Guidelines.pdf - Rule A18-1-2: the vector<bool> specialization shall not be used
+ * 
+ */
+class TestVectorBoolType
+{
+public:
+    TestVectorBoolType();
+    void print();
+private:
+    // For space efficient, it does not necessarily store its elements as a contiguous array => AUTOSAR warning
+    vector<bool> a;
+    bool *pt;
+};
+
 #endif
