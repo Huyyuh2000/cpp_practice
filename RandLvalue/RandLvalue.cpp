@@ -7,9 +7,10 @@ Test::Test()
     cout << "Default constructor is running" << endl;
 }
 
-ostream operator<<(ostream &out, const Test &test)
+ostream &operator<<(ostream &out, const Test &test)
 {
     out << "Hello from test" << endl;
+    return out;
 }
 
 Test getTest()

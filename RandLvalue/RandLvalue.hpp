@@ -24,13 +24,13 @@ class Test
 public:
     Test();
 
-    friend ostream operator<<(ostream &out, const Test &test);
+    friend ostream &operator<<(ostream &out, const Test &test);
 private:
     int a;
     string b;
 };
 
-ostream operator<<(ostream &out, const Test &test);
+ostream &operator<<(ostream &out, const Test &test);
 
 Test getTest();
 
